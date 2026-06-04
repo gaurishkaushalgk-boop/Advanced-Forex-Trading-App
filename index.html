@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trading App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <h1>📈 ForexPro</h1>
+
+            <div class="wallet-card">
+                <h3>Wallet Balance</h3>
+                <h2 id="balance">$10,000</h2>
+            </div>
+
+            <div class="market-status">
+                <span class="dot"></span>
+                Market Open
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="top-bar">
+                <h2>Forex Trading Dashboard</h2>
+                <div class="live-price">
+                    Live Market
+                </div>
+            </div>
+
+            <div class="trading-panel">
+
+                <div class="chart-box">
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+
+                <div class="trade-box">
+
+                    <h3>Trade Forex</h3>
+
+                    <label>Currency Pair</label>
+                    <select id="pair">
+                        <option value="EUR/USD">EUR/USD</option>
+                        <option value="GBP/USD">GBP/USD</option>
+                        <option value="USD/JPY">USD/JPY</option>
+                        <option value="AUD/USD">AUD/USD</option>
+                        <option value="USD-CAD">USD-CAD</option>
+                    </select>
+
+                    <label>Current Price</label>
+                    <input type="text" id="price" readonly>
+
+                    <label>Trade Amount ($)</label>
+                    <input type="number" id="amount" placeholder="Enter amount">
+
+                    <div class="buttons">
+                        <button class="buy-btn" onclick="buyTrade()">BUY</button>
+                        <button class="sell-btn" onclick="sellTrade()">SELL</button>
+                    </div>
+
+                    <div id="message"></div>
+
+                </div>
+
+            </div>
+
+            <div class="history-section">
+                <h3>Trading History</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trade</th>
+                            <th>Pair</th>
+                            <th>Amount</th>
+                            <th>Price</th>
+                            <th>P/L</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history"></tbody>
+                </table>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
